@@ -10,7 +10,7 @@ import java.net.UnknownHostException;
 public class EchoClient {
 	public void main(String[] args) throws IOException {
 		if (args.length != 2) {
-			System.err.println("Usage: java EchoClient <host name> <port number>");
+			System.err.println("CLIENT Usage: java EchoClient <host name> <port number>");
 			System.exit(1);
 		}
 
@@ -25,13 +25,13 @@ public class EchoClient {
 			String userInput;
 			while ((userInput = stdIn.readLine()) != null) {
 				out.println(userInput);
-				System.out.println("CLIENT echo: " + in.readLine());
+				System.out.println("CLIENT: echo: " + in.readLine());
 			}
 		} catch (UnknownHostException e) {
-			System.err.println("Don't know about host " + hostName);
+			System.err.println("CLIENT: Don't know about host " + hostName);
 			System.exit(1);
 		} catch (IOException e) {
-			System.err.println("Couldn't get I/O for the connection to " + hostName);
+			System.err.println("CLIENT: Couldn't get I/O for the connection to " + hostName);
 			System.exit(1);
 		}
 	}
